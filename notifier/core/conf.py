@@ -1,0 +1,18 @@
+from utils import get_env_var
+
+
+SENDINBLUE_API_KEY = get_env_var("SENDINBLUE_API_KEY")
+
+RABBIT_HOST = get_env_var('RABBIT_HOST')
+RABBIT_PASSWORD = get_env_var('RABBIT_PASSWORD')
+RABBIT_PORT = get_env_var('RABBIT_PORT')
+RABBIT_USERNAME = get_env_var('RABBIT_USERNAME')
+RABBIT_QUEUE = get_env_var('RABBIT_QUEUE')
+
+RABBIT_CONN_STR: str = f"amqp://{RABBIT_USERNAME}:{RABBIT_PASSWORD}@{RABBIT_HOST}:{RABBIT_PORT}/"
+
+__all__ = (
+    "RABBIT_CONN_STR",
+    "RABBIT_QUEUE",
+    "SENDINBLUE_API_KEY",
+)
